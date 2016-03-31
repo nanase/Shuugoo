@@ -1,0 +1,31 @@
+﻿<Window x:Class="Shuugoo.Setting"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Shuugoo"
+        mc:Ignorable="d"
+        Title="設定" Height="351.607" Width="544.483" WindowStyle="ToolWindow" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="textBox_ak" Height="23" Margin="128,69,10,0" TextWrapping="Wrap" Text="{Binding Options.AccessToken, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top" FontFamily="Consolas" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="label" Content="Access token" HorizontalAlignment="Left" Margin="10,69,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_as" Height="23" Margin="128,97,10,0" TextWrapping="Wrap" Text="{Binding Options.AccessSecret, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top" FontFamily="Consolas" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="label_Copy" Content="Access secret" HorizontalAlignment="Left" Margin="10,97,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy1" Content="ベース文字列" HorizontalAlignment="Left" Margin="10,132,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy1" Height="23" Margin="128,135,10,0" TextWrapping="Wrap" Text="{Binding Options.BaseString, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy2" Content="付加文字列" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_Copy2" Height="23" Margin="128,166,10,0" TextWrapping="Wrap" Text="{Binding Options.AdditionalString, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top"/>
+        <Label x:Name="label_Copy3" Content="付加反復最大回数" Margin="10,194,422,0" VerticalAlignment="Top"/>
+        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="128,197,0,0" VerticalAlignment="Top" Width="332" Height="23" Maximum="100" Value="{Binding Options.MaximumAdditionNumber, FallbackValue=10, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}"/>
+        <Label x:Name="label_Copy4" Content="{Binding Options.MaximumAdditionNumber, Mode=OneWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" Margin="0,194,10,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="63" HorizontalContentAlignment="Right" ContentStringFormat="{}{0} 回" Height="26"/>
+        <CheckBox x:Name="checkBox" Content="確認ダイアログを表示しない" HorizontalAlignment="Left" Margin="10,232,0,0" VerticalAlignment="Top" IsChecked="{Binding Options.NoConfirmingDialog, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}"/>
+        <Button x:Name="button_confirm" Content="アカウント確認" Margin="13,0,0,10" Height="20" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="96" Click="button_Click"/>
+        <TextBox x:Name="textBox_ck" Height="23" Margin="128,13,10,0" TextWrapping="Wrap" Text="{Binding Options.ConsumerKey, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top" FontFamily="Consolas" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="label_Copy5" Content="Consumer key" HorizontalAlignment="Left" Margin="10,13,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox_cs" Height="23" Margin="128,41,10,0" TextWrapping="Wrap" Text="{Binding Options.ConsumerSecret, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}" VerticalAlignment="Top" FontFamily="Consolas" TextChanged="textBox_TextChanged"/>
+        <Label x:Name="label_Copy6" Content="Consumer secret" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label_confirm" Content="" HorizontalAlignment="Left" Margin="114,0,0,7" Height="26" VerticalAlignment="Bottom"/>
+        <CheckBox x:Name="checkBox_Copy" Content="常に手前に表示する" HorizontalAlignment="Left" Margin="10,252,0,0" VerticalAlignment="Top" IsChecked="{Binding Options.TopMost, Mode=TwoWay, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Setting}}}"/>
+
+    </Grid>
+</Window>
